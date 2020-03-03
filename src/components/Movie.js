@@ -23,13 +23,13 @@ class Movie extends React.Component {
   }
   getData = async () => {
     const NowMovie_datas = await Axios.get(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=f765384d41ab212540d989e6d53acde4&language=en-US"
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US`
     );
     const TopRatedMovie_datas = await Axios.get(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=f765384d41ab212540d989e6d53acde4&language=en-US"
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US`
     );
     const PopularMovie_datas = await Axios.get(
-      "https://api.themoviedb.org/3/movie/popular?api_key=f765384d41ab212540d989e6d53acde4&language=en-US"
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US`
     );
     this.setState({
       NowMovie_datas,

@@ -11,7 +11,9 @@ export default class DetailMovie extends React.Component {
   }
 
   handleClick = key => {
+    console.log(key, "asdasdsads");
     Youtube({ key: process.env.REACT_APP_YOUTUBE_KEY, term: key }, videos => {
+      console.log(videos);
       this.setState({
         url: videos[0].id.videoId
       });
@@ -57,7 +59,7 @@ export default class DetailMovie extends React.Component {
           <div className="Modal">
             {onMovieCheck}
             <div className="Modal_Text">
-              <h1>{this.props.data.data.title}</h1>
+              <h1>{this.props.data.data.name}</h1>
               <div>
                 {this.props.data.data.release_date} ・{" "}
                 {this.props.data.data.runtime} ・{" "}

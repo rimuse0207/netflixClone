@@ -10,18 +10,21 @@ export default class NowMovieList extends React.Component {
       hover: false,
       visible: false,
       onData: false,
-      datas: []
+      datas: [],
+      movieDatas: []
     };
   }
   handleClick = async id => {
-    console.log("asda");
-    console.log(id);
     const data = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=f765384d41ab212540d989e6d53acde4&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US`
+    );
+    const moviedatas = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US`
     );
 
     this.setState({
       datas: data,
+      movieDatas: moviedatas,
       visible: true
     });
     console.log(data);
@@ -45,6 +48,7 @@ export default class NowMovieList extends React.Component {
           onClick={() => this.handleClick(this.props.data.id)}
         >
           <img
+            className="busutu_img"
             src={url}
             alt={this.props.data.title}
             onMouseEnter={() => this.setState({ hover: true })}
@@ -60,9 +64,15 @@ export default class NowMovieList extends React.Component {
           height="90%"
           effect="fadeInUp"
         >
-          <button onClick={this.CloseModal}>X</button>
+          <button className="close" onClick={this.CloseModal}>
+            X
+          </button>
           {this.state.onData ? (
-            <DetailMovie data={this.state.datas}></DetailMovie>
+            <DetailMovie
+              data={this.state.datas}
+              moviedata={this.state.movieDatas}
+              url={url}
+            ></DetailMovie>
           ) : (
             <div>Loading...</div>
           )}

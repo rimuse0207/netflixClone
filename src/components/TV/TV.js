@@ -19,17 +19,16 @@ class TV extends React.Component {
 
   componentDidMount() {
     this.getData();
-    console.log("asdasd");
   }
   getData = async () => {
     const airing_todayTV_datas = await Axios.get(
-      "https://api.themoviedb.org/3/tv/airing_today?api_key=f765384d41ab212540d989e6d53acde4&language=en-US&page=1"
+      `https://api.themoviedb.org/3/tv/airing_today?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&page=1`
     );
     const top_ratedTV_datas = await Axios.get(
-      "https://api.themoviedb.org/3/tv/top_rated?api_key=f765384d41ab212540d989e6d53acde4&language=en-US"
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US`
     );
     const popularTV_datas = await Axios.get(
-      "https://api.themoviedb.org/3/tv/popular?api_key=f765384d41ab212540d989e6d53acde4&language=en-US&page=1"
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&page=1`
     );
     this.setState({
       airing_todayTV_datas,
@@ -37,13 +36,12 @@ class TV extends React.Component {
       popularTV_datas,
       prepare: true
     });
-    console.log(airing_todayTV_datas);
   };
 
   render() {
     return (
       <div className="container">
-        <h2>Now Movie</h2>
+        <h2>AiringToday TV</h2>
         <div className="NowMovie">
           <ul>
             {this.state.prepare
@@ -53,7 +51,7 @@ class TV extends React.Component {
               : "asdads"}
           </ul>
         </div>
-        <h2>TOP Rate Movie</h2>
+        <h2>TOP Rate TV</h2>
         <div className="ToRatedMovie">
           <ul>
             {this.state.prepare
@@ -63,7 +61,7 @@ class TV extends React.Component {
               : "asdads"}
           </ul>
         </div>
-        <h2>Popular Movie</h2>
+        <h2>Popular TV</h2>
         <div className="PopularMovie">
           <ul>
             {this.state.prepare
