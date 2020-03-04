@@ -16,7 +16,7 @@ body {
   width: 95%;
   margin: 10px;
   padding: 10px;
-  overflow: scroll;
+  overflow: auto;
 
   display: flex;
 }
@@ -25,7 +25,7 @@ body {
   width: 95%;
   margin: 10px;
   padding: 10px;
-  overflow: scroll;
+  overflow: auto;
   display: flex;
 }
 .PopularMovie {
@@ -33,7 +33,7 @@ body {
   width: 95%;
   margin: 10px;
   padding: 10px;
-  overflow: scroll;
+  overflow: auto;
 }
 .busutu_img {
   width: 150px;
