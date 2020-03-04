@@ -39,7 +39,12 @@ export default class PopularMovie extends React.Component {
     });
   };
   render() {
-    const url = `https://image.tmdb.org/t/p/w500${this.props.data.poster_path}`;
+    let url;
+    if (this.props.data.poster_path) {
+      url = `https://image.tmdb.org/t/p/w500${this.props.data.poster_path}`;
+    } else {
+      url = `https://thumbs.dreamstime.com/z/nothing-impossible-simple-inspire-motivational-quote-hand-drawn-beautiful-lettering-print-inspirational-poster-t-s-127123264.jpg`;
+    }
     return (
       <li className="busutu">
         <div
