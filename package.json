@@ -10,6 +10,7 @@
     "dotenv": "^8.2.0",
     "gh-pages": "^2.2.0",
     "react": "^16.13.0",
+    "react-app-polyfill": "^1.0.6",
     "react-awesome-modal": "^2.0.5",
     "react-dom": "^16.13.0",
     "react-modal": "^3.11.2",
@@ -26,6 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
