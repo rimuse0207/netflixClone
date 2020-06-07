@@ -4,7 +4,7 @@ import Search from "./components/Search/Search";
 import Nav from "./components/Navigation/Nav";
 import Movie from "./container/Movie_Container";
 import TV from "./components/TV/TV";
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, HashRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
