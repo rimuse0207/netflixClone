@@ -96,8 +96,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "",
-  "proxy": "http://http://3.135.210.82",
+  "homepage": "http://3.135.210.82/build/",
+  "proxy": "http://3.135.210.82",
   "jest": {
     "roots": [
       "<rootDir>/src"
