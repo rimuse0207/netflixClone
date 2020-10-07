@@ -13,7 +13,7 @@ class TV extends React.Component {
       prepare: false,
       airing_todayTV_datas: [],
       popularTV_datas: [],
-      top_ratedTV_datas: []
+      top_ratedTV_datas: [],
     };
   }
 
@@ -34,7 +34,7 @@ class TV extends React.Component {
       airing_todayTV_datas,
       top_ratedTV_datas,
       popularTV_datas,
-      prepare: true
+      prepare: true,
     });
   };
 
@@ -48,7 +48,7 @@ class TV extends React.Component {
               ? this.state.airing_todayTV_datas.data.results.map((data, i) => {
                   return <AiringToday key={i} data={data}></AiringToday>;
                 })
-              : "asdads"}
+              : "Loading..."}
           </ul>
         </div>
         <h2>TOP Rate TV</h2>
@@ -58,7 +58,7 @@ class TV extends React.Component {
               ? this.state.top_ratedTV_datas.data.results.map((data, i) => {
                   return <TopRatedTV key={i} data={data}></TopRatedTV>;
                 })
-              : "asdads"}
+              : "Loading..."}
           </ul>
         </div>
         <h2>Popular TV</h2>
@@ -68,7 +68,7 @@ class TV extends React.Component {
               ? this.state.popularTV_datas.data.results.map((data, i) => {
                   return <PopularTV key={i} data={data}></PopularTV>;
                 })
-              : "asdads"}
+              : "Loading..."}
           </ul>
         </div>
       </div>

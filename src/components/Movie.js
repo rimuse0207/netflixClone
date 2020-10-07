@@ -13,7 +13,7 @@ class Movie extends React.Component {
       prepare: false,
       NowMovie_datas: [],
       TopRatedMovie_datas: [],
-      PopularMovie_datas: []
+      PopularMovie_datas: [],
     };
   }
 
@@ -35,7 +35,7 @@ class Movie extends React.Component {
       NowMovie_datas,
       TopRatedMovie_datas,
       PopularMovie_datas,
-      prepare: true
+      prepare: true,
     });
   };
 
@@ -49,7 +49,7 @@ class Movie extends React.Component {
               ? this.state.NowMovie_datas.data.results.map((data, i) => {
                   return <NowMovieList key={i} data={data}></NowMovieList>;
                 })
-              : "asdads"}
+              : "Loading..."}
           </ul>
         </div>
         <h2>TOP Rate Movie</h2>
@@ -59,7 +59,7 @@ class Movie extends React.Component {
               ? this.state.TopRatedMovie_datas.data.results.map((data, i) => {
                   return <ToRatedMovie key={i} data={data}></ToRatedMovie>;
                 })
-              : "asdads"}
+              : "Loading..."}
           </ul>
         </div>
         <h2>Popular Movie</h2>
@@ -69,7 +69,7 @@ class Movie extends React.Component {
               ? this.state.PopularMovie_datas.data.results.map((data, i) => {
                   return <PopularMovie key={i} data={data}></PopularMovie>;
                 })
-              : "asdads"}
+              : "Loading..."}
           </ul>
         </div>
       </div>
